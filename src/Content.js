@@ -114,7 +114,7 @@ export const content = {
     title: "Projects",
     project_content: [
       {
-        title: "Associted Foods Zimbabwe",
+        title: "Associated Foods Zimbabwe",
         image: project1,
         link: "https://associated-foods-zimbabwe.vercel.app",
       },
@@ -175,7 +175,7 @@ export const content = {
       {
         text: "danler_tech",
         icon: BsFacebook,
-        link: "https://www.instagram.com/danler_tech/",
+        link: "https://www.facebook.com/danler_tech/",
       },
 
       {
