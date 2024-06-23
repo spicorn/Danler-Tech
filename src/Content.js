@@ -167,15 +167,15 @@ export const content = {
         link: "mailto:danlertech@gmail.com",
       },
       {
-        text: "071 589 0549",
+        text: "078 782 8366/ 077 703 3766",
         icon: BsWhatsapp,
-        link: "https://wa.me/1234567890",
+        link: "https://wa.me/+263787828366",
       },
 
       {
         text: "danler_tech",
         icon: BsFacebook,
-        link: "https://www.instagram.com/codeaprogram/",
+        link: "https://www.instagram.com/danler_tech/",
       },
 
       {
