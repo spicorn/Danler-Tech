@@ -84,10 +84,10 @@ export const content = {
       },
       {
         name: "Web and Email Hosting",
-        para: "Managed Web Hosting is suited to high traffic and highly secure websites. Let us manage your VPS for peace of mind with Danler Tech.",
+        para: "Managed Web Hosting is suited to high traffic and highly secure websites. For your own peace of mind, Danler Tech will manage your VPS.",
       },
     ],
-    icon: MdArrowForward,
+   
   },
   services: {
     title: "Why",
@@ -99,7 +99,7 @@ export const content = {
         logo: services_logo1,
       },
       {
-        title: "We listen & do our homework",
+        title: "We listen & do your homework",
         para: "You know your business better than anyone, so our first step is to listen while you tell us about your business and market. We'll then do some research on our own so that we realy gt to know the ins-and-outs of your industry and hot buttons for your customers.",
         logo: services_logo2,
       },
