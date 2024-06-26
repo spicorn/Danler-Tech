@@ -50,7 +50,9 @@ const Testimonials = () => {
                 <div>
                   <p className="sm:text-base text-sm">{content.review}</p>
                   <br />
-                  <h6>{content.name}</h6>
+                  <a className="font-Poppins" href={content.link} target="_blank">
+                  {content.name}
+                </a>
                 </div>
               </div>
             </SwiperSlide>
