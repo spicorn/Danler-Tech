@@ -14,7 +14,6 @@ import avatar4 from "./assets/images/Testimonials/avatar4.png";
 
 // import icons from react-icons
 import { GrMail } from "react-icons/gr";
-import { MdArrowForward } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
