@@ -130,24 +130,32 @@ export const content = {
     subtitle: "WHAT PEOPLE SAY ABOUT US",
     testimonials_content: [
       {
-        review: "“What a company👌👌”",
+        review:
+          "“ Great experience working with Danler Tech. Outstanding web, graphic design and marketing services. I highly recommend them.”",
         img: avatar1,
-        name: "Dancel Mautsa",
+        link: " https://solarflair.co.zw/",
+        name: "Solar Flair Zimbabwe",
       },
       {
-        review: "“l would recommend this  company its the best”",
+        review:
+          "“Remarkable web and graphic design . Very efficient team, love their after sale services.”",
         img: avatar2,
-        name: "Butler Nyamunokora",
+        link: "https://associated-foods-zimbabwe.vercel.app",
+        name: "Associated Foods Zimbabwe",
       },
       {
-        review: "“Inyama boizz🔥🔥⚒️⚒️”",
+        review:
+          "“Danler Tech offers the best services at affordable prices. I highly recommend them.”",
         img: avatar3,
-        name: "Tinotenda Mautsa",
+        link: "https://www.instagram.com/no_bu_kho_si/",
+        name: "Noleen Manda",
       },
       {
-        review: "“Immm huh ichi inyama ndaty🔥🔥🔥”",
+        review:
+          "“Danler Tech provided an excellent service experience. Their graphic design and marketing work was of outstanding quality. I strongly advise others to use Danler Tech's services.”",
         img: avatar4,
-        name: "Kelvin Mautsa",
+        link: "https://www.instagram.com/_tadiwa_nashe_/",
+        name: "Ronald Mhizha",
       },
     ],
   },
