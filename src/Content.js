@@ -104,7 +104,7 @@ export const content = {
       },
       {
         title: "We are on time and on budget",
-        para: "We determine the scope of the web development project, create a budget and timeline and once they're approved, we stick to them. Just  to make sure, we do weekly status checks on progress and deadlines to kepp everyone you included on track.",
+        para: "We determine the scope of the web development project, create a budget and timeline and once they're approved, we stick to them. Just  to make sure, we do weekly status checks on progress and deadlines to keep everyone you included on track.",
         logo: services_logo3,
       },
     ],
