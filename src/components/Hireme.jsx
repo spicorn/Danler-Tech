@@ -28,10 +28,6 @@ const Hireme = () => {
            p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem]"
           >
             <p className="leading-7">{Hireme.para}</p>
-            <br />
-            <button className="btn bg-dark_primary text-white">
-              {Hireme.btnText}
-            </button>
           </div>
         </div>
       </div>
