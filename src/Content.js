@@ -169,9 +169,9 @@ export const content = {
     subtitle: "GET IN TOUCH",
     social_media: [
       {
-        text: "danlertech@gmail.com",
+        text: "danlertechnologies@gmail.com",
         icon: GrMail,
-        link: "mailto:danlertech@gmail.com",
+        link: "mailto:danlertechnologies@gmail.com",
       },
       {
         text: "078 782 8366/ 077 703 3766",
