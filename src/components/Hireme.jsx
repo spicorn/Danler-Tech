@@ -1,6 +1,6 @@
+import Lottie from "lottie-react";
 import { content } from "../Content";
-import { motion } from "framer-motion";
-import Logo from "../assets/images/Hero/danler.png";
+import animationData from "../assets/lottie/pointer.json";
 
 const Hireme = () => {
   const { Hireme } = content;
@@ -16,22 +16,11 @@ const Hireme = () => {
         </h4>
         <br />
         <div className="flex items-center md:flex-row flex-col-reverse ">
-          <motion.img
+         <Lottie
+            animationData={animationData}
+            data-aos="fade-right"
             className="max-w-sm md:block hidden"
-            src={Logo}
-            animate={{
-              scale: [1, 1.2, 1.3, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeat: Infinity,
-              repeatDelay: 1,
-            }}
-          />
+         /> 
 
           <div
             data-aos="fade-left"
