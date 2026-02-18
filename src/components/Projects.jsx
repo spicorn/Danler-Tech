@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 import Lottie from "lottie-react";
-import animationData from "../assets/lottie/responsive.json";
+import animationData from "../assets/lottie/service.json";
 import animation from "../assets/lottie/heading.json";
 
 const Projects = () => {
@@ -33,7 +33,7 @@ const Projects = () => {
           <Lottie
             animationData={animationData}
             data-aos="fade-right"
-            className="max-w-[45vw] min-w-[22rem]"
+            className="max-w-[45vw] min-w-[22rem] mt-2.5"
           />
           <Swiper
             pagination={{

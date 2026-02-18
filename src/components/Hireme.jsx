@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import { content } from "../Content";
-import animationData from "../assets/lottie/pointer.json";
+import animationData from "../assets/lottie/contact.json";
 
 const Hireme = () => {
   const { Hireme } = content;
@@ -16,11 +16,11 @@ const Hireme = () => {
         </h4>
         <br />
         <div className="flex items-center md:flex-row flex-col-reverse ">
-         <Lottie
+          <Lottie
             animationData={animationData}
             data-aos="fade-right"
             className="max-w-sm md:block hidden"
-         /> 
+          />
 
           <div
             data-aos="fade-left"

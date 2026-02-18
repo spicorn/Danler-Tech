@@ -1,5 +1,5 @@
 {
-  "homepage": "https://spicorn.github.io/Danler-Tech",
+  "homepage": "https://www.danlertech.co.zw",
   "name": "react_portfolio",
   "private": true,
   "version": "0.0.0",
@@ -13,8 +13,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.1",
+    "@tabler/icons-react": "^3.36.1",
     "aos": "^2.3.4",
+    "clsx": "^2.1.1",
     "lottie-react": "^2.4.0",
+    "motion": "^12.34.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
@@ -22,7 +25,8 @@
     "react-lottie": "^1.2.4",
     "react-modal": "^3.16.1",
     "react-type-animation": "^3.2.0",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.4",
+    "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

@@ -5,6 +5,7 @@ import BackgroundAnimation from "../Layouts/background";
 import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
+
 const Hero = () => {
   const { hero } = content;
 
@@ -13,7 +14,7 @@ const Hero = () => {
       <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
         <BackgroundAnimation />
       </div>
-      <div className="min-h-screen relative flex md:flex-row flex-col-reverse md:items-end justify-center items-center">
+      <div className="min-h-screen relative flex md:flex-row flex-col-reverse justify-center items-center">
         <div
           data-aos="slide-left"
           data-aos-delay="1200"

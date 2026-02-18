@@ -1,5 +1,6 @@
 // import components
 import Hero from "./components/Hero";
+import NavbarDemo from "./components/Header";
 import Navbar from "./Layouts/Navbar";
 import Skills from "./components/Skills";
 import Service from "./components/Services";
@@ -22,7 +23,8 @@ const App = () => {
   }, []);
   return (
     <div className="">
-      <Navbar />
+      <NavbarDemo />
+      {/* <Navbar /> */}
       <Hero />
       <Skills />
       <Service />
