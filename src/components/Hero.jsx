@@ -7,27 +7,23 @@ import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
 import { Tooltip } from "../Layouts/Tooltip";
 import { ThreeDMarquee } from "../Layouts/Marquee";
+import FallingText from "../Layouts/FallingText";
 
 const Hero = () => {
   const { hero } = content;
   const images = [
-    "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
-    "https://assets.aceternity.com/animated-modal.png",
-    "https://assets.aceternity.com/animated-testimonials.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
-    "https://assets.aceternity.com/github-globe.png",
-    "https://assets.aceternity.com/glare-card.png",
-    "https://assets.aceternity.com/layout-grid.png",
-    "https://assets.aceternity.com/flip-text.png",
-    "https://assets.aceternity.com/hero-highlight.png",
-    "https://assets.aceternity.com/carousel.webp",
-    "https://assets.aceternity.com/placeholders-and-vanish-input.png",
-    "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
-    "https://assets.aceternity.com/signup-form.png",
-    "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
-    "https://assets.aceternity.com/spotlight-new.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884p",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/vakani.png?updatedAt=1715932037555",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/home.png?updatedAt=1715932036803",
+    "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
+    "https://ik.imagekit.io/wuvzopkfi/homes.png?updatedAt=1751534434332",
     "https://assets.aceternity.com/tabs.png",
     "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
     "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
@@ -39,9 +35,6 @@ const Hero = () => {
     "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
     "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
     "https://assets.aceternity.com/multi-step-loader.png",
-    "https://assets.aceternity.com/vortex.png",
-    "https://assets.aceternity.com/wobble-card.png",
-    "https://assets.aceternity.com/world-map.webp",
   ];
   const people = [
     {
@@ -102,13 +95,35 @@ const Hero = () => {
             {hero.firstName}{" "}
             <span className="text-dark_primary">{hero.LastName}</span>
           </h1> */}
-          <div className="absolute ">
+          <div className="absolute flex flex-col items-center justify-center w-full gap-6">
             <ThreeDMarquee images={images} />
+
+            {/* <p className="text-white text-center max-w-md px-4 md:mt-10 lg:mt-24 md:text-lg lg:text-xl">
+              Crafting exceptional digital experiences through innovative web
+              solutions.
+            </p> */}
+            <FallingText
+              text={` Crafting exceptional digital experiences through innovative websolutions.`}
+              highlightWords={[
+                "Crafting",
+                "digital",
+                "through",
+                "innov",
+                "solutions",
+              ]}
+              highlightClass="highlighted"
+              trigger="hover"
+              backgroundColor="transparent"
+              wireframes={false}
+              gravity={0.56}
+              fontSize="2rem"
+              mouseConstraintStiffness={0.9}
+            />
           </div>
         </div>
 
         {/* first col */}
-        <div className="pb-16 px-6 pt-5" data-aos="fade-down">
+        <div className="pb-16 px-6 pt-5 md:px-24" data-aos="fade-down">
           <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">
             <TypeAnimation
               sequence={[
@@ -143,12 +158,12 @@ const Hero = () => {
             ))}
           </div>
           <div className="mt-28 flex justify-center">
-        <Tooltip items={people} />
-      </div>
+            <Tooltip items={people} />
+          </div>
         </div>
 
         {/* sec col */}
-        <div className="md:h-[30rem] h-96">
+        <div className="md:h-[50rem] h-96 md:m-10">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
@@ -156,7 +171,6 @@ const Hero = () => {
           />
         </div>
       </div>
-      
     </section>
   );
 };
