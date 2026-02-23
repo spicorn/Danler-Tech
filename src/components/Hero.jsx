@@ -92,7 +92,7 @@ const Hero = () => {
       <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
         <BackgroundAnimation />
       </div>
-      <div className="min-h-screen relative flex md:flex-row  flex-col-reverse  md:py-0 md:px-40 items-center">
+      <div className="min-h-screen relative flex md:flex-row  flex-col-reverse  items-center">
         <div
           data-aos="slide-left"
           data-aos-delay="1200"
@@ -142,22 +142,21 @@ const Hero = () => {
               </div>
             ))}
           </div>
+          <div className="mt-28 flex justify-center">
+        <Tooltip items={people} />
+      </div>
         </div>
 
         {/* sec col */}
-        <div className="md:h-[37rem] h-96">
+        <div className="md:h-[30rem] h-96">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
             className="h-full object-cover"
           />
         </div>
-        <div className="absolute md:bottom-40 bottom-10 left-0 w-full flex    justify-center">
-          <div className="flex flex-row items-center justify-center mb-10 w-full">
-            <Tooltip items={people} />
-          </div>
-        </div>
       </div>
+      
     </section>
   );
 };

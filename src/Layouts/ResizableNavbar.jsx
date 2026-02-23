@@ -29,7 +29,7 @@ export const Navbar = ({ children, className }) => {
   return (
     <motion.div
       ref={ref}
-      className={cn("fixed inset-x-0 top-10 z-50 w-full", className)}
+      className={cn("fixed inset-x-0 top-5 z-50 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -58,7 +58,7 @@ export const NavBody = ({ children, className, visible }) => {
       transition={{ type: "spring", stiffness: 200, damping: 50 }}
       style={{ minWidth: "800px" }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl items-center justify-between rounded-full px-4 py-2 lg:flex",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl items-center justify-between rounded-full px-4 py-1 lg:flex",
         visible ? "bg-primaryLinear" : "bg-bg_light_primary",
         className,
       )}
