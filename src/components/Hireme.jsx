@@ -1,9 +1,10 @@
 import Lottie from "lottie-react";
 import { content } from "../Content";
-import animationData from "../assets/lottie/pointer.json";
+import animationData from "../assets/lottie/contact.json";
 
 const Hireme = () => {
   const { Hireme } = content;
+  const { Contact } = content;
 
   return (
     <section className="bg-bg_light_primary">
@@ -15,23 +16,25 @@ const Hireme = () => {
           {Hireme.subtitle}
         </h4>
         <br />
-        <div className="flex items-center md:flex-row flex-col-reverse ">
-         <Lottie
+        <div className="flex items-center ">
+          <Lottie
             animationData={animationData}
             data-aos="fade-right"
             className="max-w-sm md:block hidden"
-         /> 
+          />
 
           <div
             data-aos="fade-left"
             className="border-2 border-dark_primary max-w-sm
-           p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem]"
+           p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem] md:ml-96 "
           >
             <p className="leading-7">{Hireme.para}</p>
             <br />
-            <button className="btn bg-dark_primary text-white">
-              {Hireme.btnText}
-            </button>
+            <a href={content.Contact.social_media[1].link} target="_blank">
+              <button className="btn bg-dark_primary text-white">
+                {Hireme.btnText}
+              </button>
+            </a>
           </div>
         </div>
       </div>

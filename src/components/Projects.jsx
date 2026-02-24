@@ -8,15 +8,110 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 import Lottie from "lottie-react";
-import animationData from "../assets/lottie/responsive.json";
+import animationData from "../assets/lottie/service.json";
 import animation from "../assets/lottie/heading.json";
+import { HeroParallax } from "../Layouts/HeroParallax";
 
+export const products = [
+  {
+    title: "Chema",
+    link: "https://chema.muzukuru.com",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
+  },
+  {
+    title: "First Mutual",
+    link: "https://first-mutual.muzukuru.com/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+  },
+  {
+    title: "Vakani Bricks",
+    link: "https://spicorn.github.io/Vakani/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/vakani.png?updatedAt=1715932037555",
+  },
+
+  {
+    title: "Associated Foods Zimabwe",
+    link: "https://spicorn.github.io/Associated-Foods-ZImbabwe/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
+  },
+  {
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
+  },
+
+  {
+    title: "Instant Homes",
+    link: "https://spicorn.github.io/instanthomes/",
+    thumbnail:
+      "https://ik.imagekit.io/wuvzopkfi/homes.png?updatedAt=1751534434332",
+  },
+
+  {
+    title: "Associated Foods Zimabwe",
+    link: "https://spicorn.github.io/Associated-Foods-ZImbabwe/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
+  },
+  {
+    title: "Chema",
+    link: "https://chema.muzukuru.com",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
+  },
+  {
+    title: "Instant Homes",
+    link: "https://spicorn.github.io/instanthomes/",
+    thumbnail:
+      "https://ik.imagekit.io/wuvzopkfi/homes.png?updatedAt=1751534434332",
+  },
+  {
+    title: "First Mutual",
+    link: "https://first-mutual.muzukuru.com/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+  },
+  {
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
+  },
+
+  {
+    title: "Associated Foods Zimabwe",
+    link: "https://spicorn.github.io/Associated-Foods-ZImbabwe/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
+  },
+  {
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
+  },
+
+  {
+    title: "First Mutual",
+    link: "https://first-mutual.muzukuru.com/",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+  },
+  {
+    title: "Chema",
+    link: "https://chema.muzukuru.com",
+    thumbnail:
+      "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
+  },
+];
 const Projects = () => {
   const { Projects } = content;
   return (
-    <section className="bg-bg_light_primary" id="projects">
-      <div className="md:container px-5 pt-14 min-h-screen flex flex-col justify-between">
-        <div>
+    <section id="projects">
+      <div className=" px-5 pt-5 min-h-screen flex flex-col justify-between">
+        <div className="md:container">
           <h2 className="title" data-aos="fade-down">
             {Projects.title}
           </h2>
@@ -27,42 +122,8 @@ const Projects = () => {
               className="max-w-[15vw] min-w-[12rem]"
             />
           </h4>
-          <br />
         </div>
-        <div className="flex items-center lg:flex-row flex-col-reverse gap-5">
-          <Lottie
-            animationData={animationData}
-            data-aos="fade-right"
-            className="max-w-[45vw] min-w-[22rem]"
-          />
-          <Swiper
-            pagination={{
-              clickable: true,
-            }}
-            data-aos="fade-left"
-            spaceBetween={20}
-            modules={[Pagination]}
-            className="rounded-3xl pb-16 max-w-xs drop-shadow-primary self-start"
-          >
-            {Projects.project_content.map((content, i) => (
-              <SwiperSlide
-                key={i}
-                className="bg-white rounded-3xl p-5 border-b-8 border-[#FAF9FD] h-fit"
-              >
-                <img src={content.image} alt="..." />
-                <div className="flex flex-col gap-1 mt-2">
-                  <h5 className="font-bold font-Poppins">{content.title}</h5>
-                  <a
-                    className="font-bold text-gray self-end"
-                    href={content.link}
-                  >
-                    READ MORE
-                  </a>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <HeroParallax products={products} />
       </div>
     </section>
   );

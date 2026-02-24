@@ -6,6 +6,8 @@ import services_logo3 from "./assets/images/Services/logo3.png";
 
 import project1 from "./assets/images/Projects/img1.png";
 import project2 from "./assets/images/Projects/img2.png";
+import tob from "./assets/images/Projects/tob.png";
+import mineral from "./assets/images/Projects/mineral.png";
 
 import avatar1 from "./assets/images/Testimonials/avatar1.png";
 import avatar2 from "./assets/images/Testimonials/avatar2.png";
@@ -86,7 +88,6 @@ export const content = {
         para: "Managed Web Hosting is suited to high traffic and highly secure websites. For your own peace of mind, Danler Tech will manage your VPS.",
       },
     ],
-   
   },
   services: {
     title: "Why",
@@ -99,7 +100,7 @@ export const content = {
       },
       {
         title: "We listen & do your homework",
-        para: "You know your business better than anyone, so our first step is to listen while you tell us about your business and market. We'll then do some research on our own so that we realy gt to know the ins-and-outs of your industry and hot buttons for your customers.",
+        para: "You know your business better than anyone, so our first step is to listen while you tell us about your business and market. We'll then do some research on our own so that we realy get to know your industry and hot buttons for your customers.",
         logo: services_logo2,
       },
       {
@@ -120,6 +121,16 @@ export const content = {
       {
         title: "Vakani",
         image: project2,
+        link: "https://vakani.vercel.app",
+      },
+      {
+        title: "Tob Energy",
+        image: tob,
+        link: "https://vakani.vercel.app",
+      },
+      {
+        title: "Mineral Marvern",
+        image: mineral,
         link: "https://vakani.vercel.app",
       },
     ],
@@ -161,7 +172,7 @@ export const content = {
   Hireme: {
     title: "Get In Touch",
     subtitle: "FOR YOUR PROJECTS",
-    para: "Hie there, we're so excited to start working with you. Contact us now if you have any questions, or if you wanna request a quote or even chat...",
+    para: "Hie there, we're so excited to start working with you. Contact us now if you have any questions, or if you wanna request a quote or even chat.",
     btnText: "Get In Touch",
   },
   Contact: {
@@ -193,6 +204,6 @@ export const content = {
     ],
   },
   Footer: {
-    text: "All © Copy Right Reserved 2024",
+    text: "All © Copy Right Reserved 2026",
   },
 };

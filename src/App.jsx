@@ -1,5 +1,6 @@
 // import components
 import Hero from "./components/Hero";
+import NavbarDemo from "./components/Header";
 import Navbar from "./Layouts/Navbar";
 import Skills from "./components/Skills";
 import Service from "./components/Services";
@@ -22,7 +23,8 @@ const App = () => {
   }, []);
   return (
     <div className="">
-      <Navbar />
+      <NavbarDemo />
+      {/* <Navbar /> */}
       <Hero />
       <Skills />
       <Service />
@@ -32,7 +34,7 @@ const App = () => {
       <Contact />
       <footer className="p-3 text-center">
         <h6 className="mb-3">Danler Tech</h6>
-        <p>Danler Tech © All CopyRights Reserved 2024</p>
+        <p>Danler Tech © All CopyRights Reserved 2026</p>
       </footer>
     </div>
   );
