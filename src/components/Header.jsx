@@ -15,9 +15,11 @@ import { motion } from "motion/react";
 export function Header() {
   const navItems = [
     { name: "Home", link: "#home" },
-    { name: "Our Service", link: "#services" },
-    { name: "Why Us", link: "#why" },
-    { name: "More Products", link: "#products" },
+    { name: "About Us", link: "#skills" },
+    { name: "Why Us", link: "#services" },
+    { name: "Portfolio", link: "#portfolio" },
+    { name: "Testimonials", link: "#testimonials" },
+    { name: "Contact Us", link: "#contact" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

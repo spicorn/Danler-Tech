@@ -19,37 +19,8 @@ import { GrMail } from "react-icons/gr";
 import { BsInstagram } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
-import { TbSmartHome } from "react-icons/tb";
-import { BsCodeSlash } from "react-icons/bs";
-import { RiServiceLine, RiProjectorLine } from "react-icons/ri";
-import { MdOutlinePermContactCalendar } from "react-icons/md";
 
 export const content = {
-  nav: [
-    {
-      link: "#home",
-      icon: TbSmartHome,
-    },
-
-    {
-      link: "#services",
-      icon: RiServiceLine,
-    },
-
-    {
-      link: "#skills",
-      icon: BsCodeSlash,
-    },
-
-    {
-      link: "#projects",
-      icon: RiProjectorLine,
-    },
-    {
-      link: "#contact",
-      icon: MdOutlinePermContactCalendar,
-    },
-  ],
   hero: {
     firstName: "Danler",
     LastName: "Tech",
