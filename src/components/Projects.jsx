@@ -39,11 +39,11 @@ export const products = [
       "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
   },
   {
-    title: "Real Estate Website",
-    link: "#",
-    thumbnail:
-      "https://ik.imagekit.io/qvdv4r3lk/home.png?updatedAt=1715932036803",
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
+
   {
     title: "Instant Homes",
     link: "https://spicorn.github.io/instanthomes/",
@@ -76,10 +76,9 @@ export const products = [
       "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
   },
   {
-    title: "Real Estate Website",
-    link: "#",
-    thumbnail:
-      "https://ik.imagekit.io/qvdv4r3lk/home.png?updatedAt=1715932036803",
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
 
   {
@@ -89,11 +88,11 @@ export const products = [
       "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
   },
   {
-    title: "Real Estate Website",
-    link: "#",
-    thumbnail:
-      "https://ik.imagekit.io/qvdv4r3lk/home.png?updatedAt=1715932036803",
+    title: "Tob Energy",
+    link: "https://spicorn.github.io/tobenergy/",
+    thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
+
   {
     title: "First Mutual",
     link: "https://first-mutual.muzukuru.com/",

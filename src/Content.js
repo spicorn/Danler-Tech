@@ -204,6 +204,6 @@ export const content = {
     ],
   },
   Footer: {
-    text: "All © Copy Right Reserved 2024",
+    text: "All © Copy Right Reserved 2026",
   },
 };

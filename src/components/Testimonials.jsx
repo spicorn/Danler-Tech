@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import { ThreeDMarquee } from "../Layouts/Marquee";
 import { Pagination } from "swiper";
 import { useState } from "react";
 

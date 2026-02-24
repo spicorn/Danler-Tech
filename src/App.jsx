@@ -34,7 +34,7 @@ const App = () => {
       <Contact />
       <footer className="p-3 text-center">
         <h6 className="mb-3">Danler Tech</h6>
-        <p>Danler Tech © All CopyRights Reserved 2024</p>
+        <p>Danler Tech © All CopyRights Reserved 2026</p>
       </footer>
     </div>
   );
