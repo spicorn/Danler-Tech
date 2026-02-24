@@ -39,31 +39,29 @@ const Hero = () => {
   const people = [
     {
       id: 1,
-      name: "John Doe",
-      designation: "Software Engineer",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+      name: "Dancel Mautsa",
+      designation: "Frontend Developer",
+      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
     },
     {
       id: 2,
-      name: "Robert Johnson",
-      designation: "Product Manager",
+      name: "Tinotenda Mautsa",
+      designation: "Software Engineer",
       image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
     },
     {
       id: 3,
-      name: "Jane Smith",
-      designation: "Data Scientist",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      name: "Butler Nyamunokora",
+      designation: "CEO",
+      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
     },
     {
       id: 4,
-      name: "Emily Davis",
+      name: "Ngonidzashe Mautsa",
       designation: "UX Designer",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
     },
     {
       id: 5,
@@ -85,7 +83,7 @@ const Hero = () => {
       <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
         <BackgroundAnimation />
       </div>
-      <div className="min-h-screen relative flex md:flex-row  flex-col-reverse  items-center">
+      <div className="min-h-screen relative flex md:flex-row  flex-col-reverse  items-center justify-center">
         <div
           data-aos="slide-left"
           data-aos-delay="1200"
@@ -95,35 +93,18 @@ const Hero = () => {
             {hero.firstName}{" "}
             <span className="text-dark_primary">{hero.LastName}</span>
           </h1> */}
-          <div className="absolute flex flex-col items-center justify-center w-full gap-6">
+          <div className="hidden md:flex absolute flex-col items-center justify-center w-full gap-6">
             <ThreeDMarquee images={images} />
 
             {/* <p className="text-white text-center max-w-md px-4 md:mt-10 lg:mt-24 md:text-lg lg:text-xl">
               Crafting exceptional digital experiences through innovative web
               solutions.
             </p> */}
-            <FallingText
-              text={` Crafting exceptional digital experiences through innovative websolutions.`}
-              highlightWords={[
-                "Crafting",
-                "digital",
-                "through",
-                "innov",
-                "solutions",
-              ]}
-              highlightClass="highlighted"
-              trigger="hover"
-              backgroundColor="transparent"
-              wireframes={false}
-              gravity={0.56}
-              fontSize="2rem"
-              mouseConstraintStiffness={0.9}
-            />
           </div>
         </div>
 
         {/* first col */}
-        <div className="pb-16 px-6 pt-5 md:px-24" data-aos="fade-down">
+        <div className=" px-4 items-center text-center" data-aos="fade-down">
           <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">
             <TypeAnimation
               sequence={[
@@ -163,7 +144,7 @@ const Hero = () => {
         </div>
 
         {/* sec col */}
-        <div className="md:h-[50rem] h-96 md:m-10">
+        <div className="hidden md:block md:h-[50rem] h-96 md:m-20">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
