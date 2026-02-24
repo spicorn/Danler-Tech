@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import { content } from "../Content";
 import BackgroundAnimation from "../Layouts/background";
 import { TypeAnimation } from "react-type-animation";
@@ -7,7 +6,6 @@ import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
 import { Tooltip } from "../Layouts/Tooltip";
 import { ThreeDMarquee } from "../Layouts/Marquee";
-import FallingText from "../Layouts/FallingText";
 
 const Hero = () => {
   const { hero } = content;

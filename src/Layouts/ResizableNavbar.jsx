@@ -81,7 +81,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
           key={item.link}
           href={item.link}
           onClick={onItemClick}
-          className="rounded-full px-4 py-2 font-semibold text-gray-950 hover:bg-[#614539] transition"
+          className="rounded-full px-4 py-2 font-semibold text-gray-950 hover:bg-white transition"
         >
           {item.name}
         </a>
@@ -163,7 +163,7 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="fixed right-4 top-4 z-[1100] rounded-xl bg-teal-500/20 p-2.5 hover:bg-teal-500/30"
+              className="fixed right-4 top-4 z-[1100] rounded-xl bg-primaryLinear p-2.5 hover:bg-teal-500/30"
             >
               <IconX className="h-6 w-6 text-teal-700" />
             </button>

@@ -109,7 +109,7 @@ export const products = [
 const Projects = () => {
   const { Projects } = content;
   return (
-    <section id="projects">
+    <section id="portfolio">
       <div className=" px-5 pt-5 min-h-screen flex flex-col justify-between">
         <div className="md:container">
           <h2 className="title" data-aos="fade-down">
