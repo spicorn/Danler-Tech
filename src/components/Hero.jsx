@@ -45,14 +45,13 @@ const Hero = () => {
       id: 2,
       name: "Tinotenda Mautsa",
       designation: "Software Engineer",
-      image:
-        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
+      image: "https://ik.imagekit.io/qvdv4r3lk/tino.jpg",
     },
     {
       id: 3,
       name: "Butler Nyamunokora",
       designation: "CEO",
-      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
+      image: "https://ik.imagekit.io/qvdv4r3lk/butler.jpg",
     },
     {
       id: 4,
@@ -81,11 +80,11 @@ const Hero = () => {
       <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
         <BackgroundAnimation />
       </div>
-      <div className="min-h-screen relative flex md:flex-row  flex-col-reverse  items-center justify-center">
+      <div className="min-h-[100vh] relative flex md:flex-row flex-col-reverse items-center justify-center py-10">
         <div
           data-aos="slide-left"
           data-aos-delay="1200"
-          className="absolute h-full md:w-4/12 w-8/12 top-0 right-0 bg-primaryLinear bottom-0 -z-10"
+          className="absolute inset-y-0 md:w-4/12 w-8/12 right-0 bg-primaryLinear -z-10"
         >
           {/* <h1 className="rotate-90 absolute top-[30%] right-[-15%] text-[#EAF2FA]">
             {hero.firstName}{" "}
@@ -136,13 +135,13 @@ const Hero = () => {
               </div>
             ))}
           </div>
-          <div className="mt-28 flex justify-center">
+          <div className="mt-10 md:mt-20 lg:mt-28 flex justify-center">
             <Tooltip items={people} />
           </div>
         </div>
 
         {/* sec col */}
-        <div className="hidden md:block md:h-[50rem] h-96 md:m-20">
+        <div className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
