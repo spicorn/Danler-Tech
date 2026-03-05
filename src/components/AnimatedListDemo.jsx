@@ -27,7 +27,7 @@ let notifications = [
     color: "#FF3D71",
   },
   {
-    name: "Garrell Enock",
+    name: "Mineral Marven Ltd",
     description: "Your designs are slick and you deliver on time keep it up.",
     time: "2m ago",
     icon: User,

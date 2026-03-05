@@ -17,7 +17,7 @@ export function Header() {
     { name: "Home", link: "#home" },
     { name: "About Us", link: "#skills" },
     { name: "Why Us", link: "#services" },
-    { name: "Portfolio", link: "#portfolio" },
+    { name: "Our Work", link: "#portfolio" },
     { name: "Testimonials", link: "#testimonials" },
     { name: "Contact Us", link: "#contact" },
   ];
@@ -88,7 +88,7 @@ export function Header() {
                   key={`mobile-link-${idx}`}
                   href={item.link}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative block px-4 py-4 text-lg font-semibold text-white rounded-xl bg-slate-900/80 backdrop-blur-sm border border-slate-700 hover:bg-slate-900/90 hover:border-slate-500 transition-all group"
+                  className="relative block px-4 py-4 text-lg font-semibold text-center items-center text-white rounded-xl bg-slate-900/80 backdrop-blur-sm border border-slate-700 hover:bg-slate-900/90 hover:border-slate-500 transition-all group"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -30 }}
@@ -104,16 +104,8 @@ export function Header() {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="relative z-10 flex items-center">
-                    <span className="block">{item.name}</span>
-                    <motion.span
-                      className="ml-auto text-teal-500 opacity-0 group-hover:opacity-100"
-                      initial={{ x: -10 }}
-                      whileHover={{ x: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      →
-                    </motion.span>
+                  <span className="relative z-10 flex items-center justify-center">
+                    <span className="block  text-white">{item.name}</span>
                   </span>
 
                   <motion.div

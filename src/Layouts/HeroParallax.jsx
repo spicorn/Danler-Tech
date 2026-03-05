@@ -3,9 +3,9 @@ import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 
 export const HeroParallax = ({ products }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const firstRow = products.slice(0, 5).map((p, i) => ({ ...p, _key: `row0-${i}` }));
+  const secondRow = products.slice(5, 10).map((p, i) => ({ ...p, _key: `row1-${i}` }));
+  const thirdRow = products.slice(10, 15).map((p, i) => ({ ...p, _key: `row2-${i}` }));
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -41,7 +41,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-[180vh] md:h-[200vh] lg:h-[200vh] py-10 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="relative h-[180vh] md:h-[200vh] lg:h-[200vh] py-10 overflow-hidden antialiased flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -58,7 +58,7 @@ export const HeroParallax = ({ products }) => {
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product._key}
             />
           ))}
         </motion.div>
@@ -67,7 +67,7 @@ export const HeroParallax = ({ products }) => {
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product._key}
             />
           ))}
         </motion.div>
@@ -76,7 +76,7 @@ export const HeroParallax = ({ products }) => {
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product._key}
             />
           ))}
         </motion.div>
@@ -106,7 +106,6 @@ export const ProductCard = ({ product, translate }) => {
       whileHover={{
         y: -20,
       }}
-      key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
     >
       <a

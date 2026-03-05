@@ -120,8 +120,8 @@ const Projects = () => {
   }
 
   return (
-    <section id="portfolio">
-      <div className=" px-5 pt-5 min-h-screen flex flex-col justify-between">
+    <section id="portfolio" className="relative">
+      <div className="relative px-5 pt-5 min-h-screen flex flex-col justify-between">
         <div className="md:container">
           <motion.h2
             className="title"
