@@ -1,32 +1,57 @@
 import { content } from "../Content";
+import { motion } from "motion/react";
 
 const Services = () => {
   const { services } = content;
   return (
     <section id="services">
       <div className="md:container px-5 py-14">
-        <h2 className="title" data-aos="fade-down">
+        <motion.h2
+          className="title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {services.title}
-        </h2>
-        <h4 className="subtitle" data-aos="fade-down">
+        </motion.h2>
+        <motion.h4
+          className="subtitle"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           {services.subtitle}
-        </h4>
+        </motion.h4>
         <br />
-        <div className="flex gap-5 justify-between flex-wrap group">
-          {services.service_content.map((content, i) => (
-            <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="flex gap-5 justify-between flex-wrap group"
+        >
+          {services.service_content.map((service, i) => (
+            <motion.div
               key={i}
-              data-aos="fade-up"
-              data-aos-delay={i * 600}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, ease: "easeOut" },
+                },
+              }}
               className="min-w-[14rem] duration-300 cursor-pointer border-2 border-slate-200 rounded-xl text-center bg-bg_light_primary p-6 flex-1 group-hover:blur-sm 
               hover:!blur-none"
             >
-              <img src={content.logo} alt="..." className="mx-auto" />
-              <h6 className="my-3">{content.title}</h6>
-              <p className="leading-7">{content.para}</p>
-            </div>
+              <img src={service.logo} alt="..." className="mx-auto" />
+              <h6 className="my-3">{service.title}</h6>
+              <p className="leading-7">{service.para}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

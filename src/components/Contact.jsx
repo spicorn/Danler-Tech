@@ -2,6 +2,9 @@ import { createElement, useRef } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import { Button } from "../Layouts/MovingBorder";
+import { Send } from "lucide-react";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const { Contact } = content;
@@ -16,7 +19,7 @@ const Contact = () => {
         "service_hko5w58",
         "template_9f5ufxc",
         form.current,
-        "VKNQJGTDHHOJVx5iH"
+        "VKNQJGTDHHOJVx5iH",
       )
       .then(
         (result) => {
@@ -29,7 +32,7 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
           toast.error(error.text);
-        }
+        },
       );
   };
 
@@ -37,18 +40,30 @@ const Contact = () => {
     <section className="bg-dark_primary text-white" id="contact">
       <Toaster />
       <div className="md:container px-5 py-14">
-        <h2 className="title !text-white" data-aos="fade-down">
+        <motion.h2
+          className="title !text-white"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {Contact.title}
-        </h2>
-        <h4 className="subtitle" data-aos="fade-down">
+        </motion.h2>
+        <motion.h4
+          className="subtitle"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           {Contact.subtitle}
-        </h4>
+        </motion.h4>
         <br />
         <div className="flex gap-10 md:flex-row flex-col">
-          <form
+          <motion.form
             ref={form}
             onSubmit={sendEmail}
-            data-aos="fade-up"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex-1 flex flex-col gap-5"
           >
             {/* Input Name as same as email js templates values */}
@@ -73,28 +88,49 @@ const Contact = () => {
               className="border border-slate-600 p-3 rounded h-44"
               required
             ></textarea>
-            <button
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-transparent text-black dark:text-white border-neutral-200 flex items-center gap-2"
+            >
+              <Send size={18} />
+              Submit
+            </Button>
+            {/* <button
               className="btn self-start
             bg-white text-dark_primary"
             >
               Submit
-            </button>
-          </form>
-          <div className="flex-1 text-center flex flex-col gap-5">
+            </button> */}
+          </motion.form>
+          <motion.div
+            className="flex-1 text-center flex flex-col gap-5"
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.15 } },
+            }}
+          >
             {Contact.social_media.map((content, i) => (
-              <div
+              <motion.div
                 key={i}
-                data-aos="fade-down"
-                data-aos-delay={i * 430}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
+                }}
                 className="flex items-center gap-2"
               >
                 <h4 className="text-white">{createElement(content.icon)}</h4>
                 <a className="font-Poppins" href={content.link} target="_blank">
                   {content.text}
                 </a>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

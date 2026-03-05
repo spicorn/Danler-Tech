@@ -82,7 +82,8 @@ export const content = {
     ],
   },
   Projects: {
-    title: "Projects",
+    title: "Our Work",
+    subtitle: "Explore our selected projects and see how we transform ideas into exceptional digital experinces .",
     project_content: [
       {
         title: "Associated Foods Zimbabwe",
@@ -144,11 +145,11 @@ export const content = {
     title: "Get In Touch",
     subtitle: "FOR YOUR PROJECTS",
     para: "Hie there, we're so excited to start working with you. Contact us now if you have any questions, or if you wanna request a quote or even chat.",
-    btnText: "Get In Touch",
+    btnText: "Get A Quote",
   },
   Contact: {
     title: "Contect Us",
-    subtitle: "GET IN TOUCH",
+    subtitle: "TELL US ABOUT YOUR PROJECT",
     social_media: [
       {
         text: "danlertechnologies@gmail.com",

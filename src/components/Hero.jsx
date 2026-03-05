@@ -4,8 +4,11 @@ import BackgroundAnimation from "../Layouts/background";
 import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
-import { Tooltip } from "../Layouts/Tooltip";
+import { Button } from "../Layouts/MovingBorder";
+import { Rocket } from "lucide-react";
+import { MessageCircleMore } from "lucide-react";
 import { ThreeDMarquee } from "../Layouts/Marquee";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const { hero } = content;
@@ -34,74 +37,41 @@ const Hero = () => {
     "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
     "https://assets.aceternity.com/multi-step-loader.png",
   ];
-  const people = [
-    {
-      id: 1,
-      name: "Dancel Mautsa",
-      designation: "Frontend Developer",
-      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
-    },
-    {
-      id: 2,
-      name: "Tinotenda Mautsa",
-      designation: "Software Engineer",
-      image: "https://ik.imagekit.io/qvdv4r3lk/tino.jpg",
-    },
-    {
-      id: 3,
-      name: "Butler Nyamunokora",
-      designation: "CEO",
-      image: "https://ik.imagekit.io/qvdv4r3lk/butler.jpg",
-    },
-    {
-      id: 4,
-      name: "Ngonidzashe Mautsa",
-      designation: "UX Designer",
-      image:
-        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
-    },
-    {
-      id: 5,
-      name: "Tyler Durden",
-      designation: "Soap Developer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-    },
-    {
-      id: 6,
-      name: "Dora",
-      designation: "The Explorer",
-      image:
-        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
-    },
-  ];
   return (
-    <section id="home" className="overflow-hidden">
-      <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
+    <motion.section
+      id="home"
+      className="overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.div
+        className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <BackgroundAnimation />
-      </div>
+      </motion.div>
       <div className="min-h-[100vh] relative flex md:flex-row flex-col-reverse items-center justify-center py-10">
-        <div
-          data-aos="slide-left"
-          data-aos-delay="1200"
+        <motion.div
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="absolute inset-y-0 md:w-4/12 w-8/12 right-0 bg-primaryLinear -z-10"
         >
-          {/* <h1 className="rotate-90 absolute top-[30%] right-[-15%] text-[#EAF2FA]">
-            {hero.firstName}{" "}
-            <span className="text-dark_primary">{hero.LastName}</span>
-          </h1> */}
           <div className="hidden md:flex absolute flex-col items-center justify-center w-full gap-6">
             <ThreeDMarquee images={images} />
-
-            {/* <p className="text-white text-center max-w-md px-4 md:mt-10 lg:mt-24 md:text-lg lg:text-xl">
-              Crafting exceptional digital experiences through innovative web
-              solutions.
-            </p> */}
           </div>
-        </div>
+        </motion.div>
 
         {/* first col */}
-        <div className=" px-4 items-center text-center" data-aos="fade-down">
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className=" px-4 items-center text-center"
+        >
           <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">
             <TypeAnimation
               sequence={[
@@ -119,37 +89,94 @@ const Hero = () => {
           </h1>
           <br />
           <div className="flex justify-end">
-            <button className="btn">{hero.btnText}</button>
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 "
+            >
+              {hero.btnText}
+            </Button>
           </div>
-          <div className="flex flex-col gap-10 mt-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+            className="flex flex-col gap-10 mt-10"
+          >
             {hero.hero_content.map((content, i) => (
-              <div
+              <motion.div
                 key={i}
-                data-aos="fade-down"
-                data-aos-delay={i * 300}
+                variants={{
+                  hidden: { opacity: 0, y: -20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: "easeOut" },
+                  },
+                }}
                 className={`flex items-center w-80 gap-5
                 ${i === 1 && " flex-row-reverse text-right"}  `}
               >
                 <h3>{content.count}</h3>
                 <p>{content.text}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-          <div className="mt-10 md:mt-20 lg:mt-28 flex justify-center">
-            <Tooltip items={people} />
-          </div>
-        </div>
+          </motion.div>
+          <motion.div
+            className="mt-10 md:mt-20 lg:mt-28 flex justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          >
+            <motion.a
+              href="#contact"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-transparent text-black border-neutral-200 flex items-center gap-2"
+              >
+                <Rocket size={18} />
+                Get A Quote
+              </Button>
+            </motion.a>
+            <motion.a
+              href={content.Contact.social_media[1].link}
+              target="_blank"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+            >
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 flex items-center gap-2"
+              >
+                <MessageCircleMore size={18} />
+                WhatsApp Us
+              </Button>
+            </motion.a>
+          </motion.div>
+        </motion.div>
 
         {/* sec col */}
-        <div className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10">
-          <Lottie
-            animationData={animationData}
-            data-aos="slide-up"
-            className="h-full object-cover"
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10"
+        >
+          <Lottie animationData={animationData} className="h-full object-cover" />
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
