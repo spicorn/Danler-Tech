@@ -82,7 +82,8 @@ export const content = {
     ],
   },
   Projects: {
-    title: "Projects",
+    title: "Our Work",
+    subtitle: "Explore our selected projects and see how we transform ideas into exceptional digital experinces .",
     project_content: [
       {
         title: "Associated Foods Zimbabwe",

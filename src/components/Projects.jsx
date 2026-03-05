@@ -115,13 +115,13 @@ const Projects = () => {
           <h2 className="title" data-aos="fade-down">
             {Projects.title}
           </h2>
-          <h4 className="subtitle" data-aos="fade-down">
+          <h5 className="subtitle" data-aos="fade-down">
             <Lottie
               animationData={animation}
               data-aos="fade-right"
               className="max-w-[15vw] min-w-[12rem]"
             />
-          </h4>
+          </h5>
         </div>
         <HeroParallax products={products} />
       </div>

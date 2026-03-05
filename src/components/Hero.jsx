@@ -4,7 +4,9 @@ import BackgroundAnimation from "../Layouts/background";
 import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
-import { Tooltip } from "../Layouts/Tooltip";
+import { Button } from "../Layouts/MovingBorder";
+import { Rocket } from "lucide-react";
+import { MessageCircleMore } from "lucide-react";
 import { ThreeDMarquee } from "../Layouts/Marquee";
 
 const Hero = () => {
@@ -34,47 +36,6 @@ const Hero = () => {
     "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
     "https://assets.aceternity.com/multi-step-loader.png",
   ];
-  const people = [
-    {
-      id: 1,
-      name: "Dancel Mautsa",
-      designation: "Frontend Developer",
-      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
-    },
-    {
-      id: 2,
-      name: "Tinotenda Mautsa",
-      designation: "Software Engineer",
-      image: "https://ik.imagekit.io/qvdv4r3lk/tino.jpg",
-    },
-    {
-      id: 3,
-      name: "Butler Nyamunokora",
-      designation: "CEO",
-      image: "https://ik.imagekit.io/qvdv4r3lk/butler.jpg",
-    },
-    {
-      id: 4,
-      name: "Ngonidzashe Mautsa",
-      designation: "UX Designer",
-      image:
-        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
-    },
-    {
-      id: 5,
-      name: "Tyler Durden",
-      designation: "Soap Developer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-    },
-    {
-      id: 6,
-      name: "Dora",
-      designation: "The Explorer",
-      image:
-        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
-    },
-  ];
   return (
     <section id="home" className="overflow-hidden">
       <div className="flex sm:flex-row flex-col justify-center items-center order-1 absolute w-full h-full">
@@ -86,17 +47,8 @@ const Hero = () => {
           data-aos-delay="1200"
           className="absolute inset-y-0 md:w-4/12 w-8/12 right-0 bg-primaryLinear -z-10"
         >
-          {/* <h1 className="rotate-90 absolute top-[30%] right-[-15%] text-[#EAF2FA]">
-            {hero.firstName}{" "}
-            <span className="text-dark_primary">{hero.LastName}</span>
-          </h1> */}
           <div className="hidden md:flex absolute flex-col items-center justify-center w-full gap-6">
             <ThreeDMarquee images={images} />
-
-            {/* <p className="text-white text-center max-w-md px-4 md:mt-10 lg:mt-24 md:text-lg lg:text-xl">
-              Crafting exceptional digital experiences through innovative web
-              solutions.
-            </p> */}
           </div>
         </div>
 
@@ -119,7 +71,12 @@ const Hero = () => {
           </h1>
           <br />
           <div className="flex justify-end">
-            <button className="btn">{hero.btnText}</button>
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 "
+            >
+              {hero.btnText}
+            </Button>
           </div>
           <div className="flex flex-col gap-10 mt-10">
             {hero.hero_content.map((content, i) => (
@@ -135,13 +92,30 @@ const Hero = () => {
               </div>
             ))}
           </div>
-          <div className="mt-10 md:mt-20 lg:mt-28 flex justify-center">
-            <Tooltip items={people} />
+          <div className="mt-10 md:mt-20 lg:mt-28 flex justify-center gap-4">
+            <a href="#contact">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-transparent text-black border-neutral-200 flex items-center gap-2"
+              >
+                <Rocket size={18} />
+                Get A Quote
+              </Button>
+            </a>
+            <a href={content.Contact.social_media[1].link} target="_blank">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 flex items-center gap-2"
+              >
+                <MessageCircleMore size={18} />
+                WhatsApp Us
+              </Button>
+            </a>
           </div>
         </div>
 
         {/* sec col */}
-        <div className="hidden md:flex md:h-[70vh] lg:h-[8                                0vh] items-center justify-center md:m-10">
+        <div className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
