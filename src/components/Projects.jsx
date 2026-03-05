@@ -34,7 +34,7 @@ export const products = [
   },
   {
     title: "Tob Energy",
-    link: "https://spicorn.github.io/tobenergy/",
+    link: "https://www.tobenergy.co.zw/",
     thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
 
@@ -71,7 +71,7 @@ export const products = [
   },
   {
     title: "Tob Energy",
-    link: "https://spicorn.github.io/tobenergy/",
+    link: "https://www.tobenergy.co.zw/",
     thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
 
@@ -83,7 +83,7 @@ export const products = [
   },
   {
     title: "Tob Energy",
-    link: "https://spicorn.github.io/tobenergy/",
+    link: "https://www.tobenergy.co.zw/",
     thumbnail: "https://ik.imagekit.io/qvdv4r3lk/tob.png",
   },
 
