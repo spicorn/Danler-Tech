@@ -35,14 +35,14 @@ let notifications = [
   },
   {
     name: "Mineral Marven Ltd",
-    description: "Your designs are slick and you deliver on time keep it up.",
+    description: "Your designs are sleek and you deliver on time keep it up.",
     time: "2m ago",
     icon: User,
     color: "#1E86FF",
   },
   {
     name: "Derf Corp",
-    description: "You Guys are the best at your work",
+    description: "You Guys are the best at what you do.",
     time: "10m ago",
     icon: User,
     color: "#FFB800",
