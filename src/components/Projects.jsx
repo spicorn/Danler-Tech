@@ -1,14 +1,5 @@
 import { content } from "../Content";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { Pagination } from "swiper";
 import Lottie from "lottie-react";
-import animationData from "../assets/lottie/service.json";
 import animation from "../assets/lottie/heading.json";
 import { HeroParallax } from "../Layouts/HeroParallax";
 

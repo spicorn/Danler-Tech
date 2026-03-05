@@ -2,6 +2,8 @@ import { createElement, useRef } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import { Button } from "../Layouts/MovingBorder";
+import { Send } from "lucide-react";
 
 const Contact = () => {
   const { Contact } = content;
@@ -16,7 +18,7 @@ const Contact = () => {
         "service_hko5w58",
         "template_9f5ufxc",
         form.current,
-        "VKNQJGTDHHOJVx5iH"
+        "VKNQJGTDHHOJVx5iH",
       )
       .then(
         (result) => {
@@ -29,7 +31,7 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
           toast.error(error.text);
-        }
+        },
       );
   };
 
@@ -73,12 +75,19 @@ const Contact = () => {
               className="border border-slate-600 p-3 rounded h-44"
               required
             ></textarea>
-            <button
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-transparent text-black dark:text-white border-neutral-200 flex items-center gap-2"
+            >
+              <Send size={18} />
+              Submit
+            </Button>
+            {/* <button
               className="btn self-start
             bg-white text-dark_primary"
             >
               Submit
-            </button>
+            </button> */}
           </form>
           <div className="flex-1 text-center flex flex-col gap-5">
             {Contact.social_media.map((content, i) => (

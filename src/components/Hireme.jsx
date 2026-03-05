@@ -1,6 +1,8 @@
 import Lottie from "lottie-react";
 import { content } from "../Content";
 import animationData from "../assets/lottie/contact.json";
+import { Button } from "../Layouts/MovingBorder";
+import { Rocket } from "lucide-react";
 
 const Hireme = () => {
   const { Hireme } = content;
@@ -31,9 +33,13 @@ const Hireme = () => {
             <p className="leading-7">{Hireme.para}</p>
             <br />
             <a href={content.Contact.social_media[1].link} target="_blank">
-              <button className="btn bg-dark_primary text-white">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 flex items-center gap-2"
+              >
+                <Rocket size={18} />
                 {Hireme.btnText}
-              </button>
+              </Button>
             </a>
           </div>
         </div>

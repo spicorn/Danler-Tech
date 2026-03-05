@@ -41,7 +41,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-[300vh]  py-10 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] "
+      className="h-[220vh]  py-10 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -88,9 +88,6 @@ export const HeroParallax = ({ products }) => {
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
-      </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-black/80">
         We build beautiful products with the latest technologies and frameworks.
         We are a team of passionate developers and designers that love to build
@@ -110,9 +107,12 @@ export const ProductCard = ({ product, translate }) => {
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-96 w-[30rem] relative shrink-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <a
+        href={product.link}
+        className="block rounded-3xl overflow-hidden group-hover/product:shadow-2xl transition-shadow duration-300"
+      >
         <img
           src={product.thumbnail}
           height="600"
