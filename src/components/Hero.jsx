@@ -7,6 +7,7 @@ import animationData from "../assets/lottie/responsive.json";
 import { Button } from "../Layouts/MovingBorder";
 import { Rocket } from "lucide-react";
 import { MessageCircleMore } from "lucide-react";
+import { SmilePlus } from "lucide-react";
 import { ThreeDMarquee } from "../Layouts/Marquee";
 import { motion } from "motion/react";
 
@@ -91,9 +92,10 @@ const Hero = () => {
           <div className="flex justify-end">
             <Button
               borderRadius="1.75rem"
-              className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 "
+              className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 flex items-center gap-2"
             >
               {hero.btnText}
+              <SmilePlus size={18} />
             </Button>
           </div>
           <motion.div
@@ -173,7 +175,10 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10"
         >
-          <Lottie animationData={animationData} className="h-full object-cover" />
+          <Lottie
+            animationData={animationData}
+            className="h-full object-cover"
+          />
         </motion.div>
       </div>
     </motion.section>

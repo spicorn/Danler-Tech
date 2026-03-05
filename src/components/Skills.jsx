@@ -49,7 +49,7 @@ const Skills = () => {
                 }}
                 className="relative flex h-[12em] w-[18em] items-center justify-center rounded-[1.5em] border-[1px] border-dark_primary bg-bg_light_primary p-[1.5em] text-lime-300"
               >
-                <div className="group absolute -mt-10 left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]">
+                <div className="group absolute -mt-10 left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-slate-900/80 backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]">
                   <svg
                     className="h-[1.5em] w-[1.5em]  duration-300 group-hover:opacity-0"
                     viewBox="0 0 48 48"
@@ -74,11 +74,11 @@ const Skills = () => {
                   </svg>
                   <div className="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0">
                     <div className="items-left flex flex-col justify-center">
-                      <p className="text-[0.9em] font-light">{skill.para}</p>
+                      <p className="text-[0.9em] font-light text-white">{skill.para}</p>
                     </div>
                   </div>
                 </div>
-                <h1 className="text-center mt-8 font-nunito text-[2em] font-black text-purple-950">
+                <h1 className="text-center mt-8 font-nunito text-[2em] font-black text-dark_primary">
                   {skill.name}
                 </h1>
               </motion.div>

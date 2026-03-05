@@ -24,7 +24,7 @@ export const content = {
   hero: {
     firstName: "Danler",
     LastName: "Tech",
-    btnText: "Welcome😊",
+    btnText: "Welcome",
 
     hero_content: [
       {

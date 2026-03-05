@@ -88,7 +88,7 @@ export function Header() {
                   key={`mobile-link-${idx}`}
                   href={item.link}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative block px-4 py-4 text-lg font-semibold text-gray-700 rounded-xl bg-white/80 backdrop-blur-sm border border-teal-200/50 hover:bg-teal-50 hover:border-teal-500 transition-all group"
+                  className="relative block px-4 py-4 text-lg font-semibold text-white rounded-xl bg-slate-900/80 backdrop-blur-sm border border-slate-700 hover:bg-slate-900/90 hover:border-slate-500 transition-all group"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -30 }}
@@ -100,7 +100,7 @@ export function Header() {
                   whileHover={{
                     x: 8,
                     scale: 1.02,
-                    boxShadow: "0 10px 25px rgba(20, 184, 166, 0.2)",
+                    boxShadow: "0 10px 25px rgba(15, 23, 42, 0.5)",
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
