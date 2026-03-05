@@ -12,7 +12,20 @@ let notifications = [
     icon: User,
     color: "#00C9A7",
   },
-
+  {
+    name: "TOB Energy",
+    description: "Best in the game keep it that way.👏👏🔥",
+    time: "18m ago",
+    icon: User,
+    color: "#1E86FF",
+  },
+  {
+    name: "Derf Corp",
+    description: "You Guys are the best at your work",
+    time: "10m ago",
+    icon: User,
+    color: "#FFB800",
+  },
   {
     name: "Muzukuru Funeral Streaming",
     description: "Keep up the great work",

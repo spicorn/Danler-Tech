@@ -99,7 +99,7 @@ export const content = {
       {
         title: "Tob Energy",
         image: tob,
-        link: "https://vakani.vercel.app",
+        link: "https://www.tobenergy.co.zw/",
       },
       {
         title: "Mineral Marvern",
@@ -121,11 +121,12 @@ export const content = {
       },
       {
         review:
-          "“Remarkable web and graphic design . Very efficient team, love their after sale services.”",
-        img: avatar2,
-        link: "https://associated-foods-zimbabwe.vercel.app",
-        name: "Associated Foods Zimbabwe",
+          "“Danler Tech provided an excellent service experience. Their graphic design and marketing work was of outstanding quality. I strongly advise others to use Danler Tech's services.”",
+        img: avatar4,
+        link: "https://www.tobenergy.co.zw/",
+        name: "TOB Energy",
       },
+
       {
         review:
           "“Danler Tech offers the best services at affordable prices. I highly recommend them.”",
@@ -135,10 +136,10 @@ export const content = {
       },
       {
         review:
-          "“Danler Tech provided an excellent service experience. Their graphic design and marketing work was of outstanding quality. I strongly advise others to use Danler Tech's services.”",
-        img: avatar4,
-        link: "https://www.instagram.com/_tadiwa_nashe_/",
-        name: "Ronald Mhizha",
+          "“Remarkable web and graphic design . Very efficient team, love their after sale services.”",
+        img: avatar2,
+        link: "https://associated-foods-zimbabwe.vercel.app",
+        name: "Associated Foods Zimbabwe",
       },
     ],
   },
