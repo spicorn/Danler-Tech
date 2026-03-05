@@ -83,7 +83,8 @@ export const content = {
   },
   Projects: {
     title: "Our Work",
-    subtitle: "Explore our selected projects and see how we transform ideas into exceptional digital experinces .",
+    subtitle:
+      "Explore our selected projects and see how we transform ideas into exceptional digital experinces .",
     project_content: [
       {
         title: "Associated Foods Zimbabwe",
@@ -129,8 +130,8 @@ export const content = {
         review:
           "“Danler Tech offers the best services at affordable prices. I highly recommend them.”",
         img: avatar3,
-        link: "https://www.instagram.com/no_bu_kho_si/",
-        name: "Noleen Manda",
+        link: "https://muzukuru.co.zw/",
+        name: "Muzukuru FUneral Streaming",
       },
       {
         review:

@@ -44,7 +44,7 @@ const Hireme = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="border-2 border-dark_primary max-w-sm
-           p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem] md:ml-96 "
+           p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem] md:ml-96 mb-8 "
           >
             <p className="leading-7">{Hireme.para}</p>
             <br />
