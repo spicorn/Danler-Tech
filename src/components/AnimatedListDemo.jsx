@@ -40,6 +40,13 @@ let notifications = [
     icon: User,
     color: "#1E86FF",
   },
+  {
+    name: "Derf Corp",
+    description: "You Guys are the best at your work",
+    time: "10m ago",
+    icon: User,
+    color: "#FFB800",
+  },
 ];
 
 notifications = Array.from({ length: 10 }, () => notifications).flat();
