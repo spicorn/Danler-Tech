@@ -94,7 +94,7 @@ export const Header = () => {
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-black/80">
         We build beautiful products with the latest technologies and frameworks.
         We are a team of passionate developers and designers that love to build
-        amazing products.
+        amazing products. Faster launch MVPs in weeks, not months
       </p>
     </div>
   );

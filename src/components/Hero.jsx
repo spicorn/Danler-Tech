@@ -141,7 +141,7 @@ const Hero = () => {
         </div>
 
         {/* sec col */}
-        <div className="hidden md:flex md:h-[70vh] lg:h-[80vh] items-center justify-center md:m-10">
+        <div className="hidden md:flex md:h-[70vh] lg:h-[8                                0vh] items-center justify-center md:m-10">
           <Lottie
             animationData={animationData}
             data-aos="slide-up"
