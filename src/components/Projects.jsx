@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import animation from "../assets/lottie/heading.json";
 import { HeroParallax } from "../Layouts/HeroParallax";
 import MobileView from "../components/MobileProjects";
+import { motion } from "motion/react";
 
 export const products = [
   {
@@ -122,16 +123,31 @@ const Projects = () => {
     <section id="portfolio">
       <div className=" px-5 pt-5 min-h-screen flex flex-col justify-between">
         <div className="md:container">
-          <h2 className="title" data-aos="fade-down">
+          <motion.h2
+            className="title"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             {Projects.title}
-          </h2>
-          <h5 className="subtitle" data-aos="fade-down">
-            <Lottie
-              animationData={animation}
-              data-aos="fade-right"
-              className="max-w-[15vw] min-w-[12rem]"
-            />
-          </h5>
+          </motion.h2>
+          <motion.h5
+            className="subtitle"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            >
+              <Lottie
+                animationData={animation}
+                className="max-w-[15vw] min-w-[12rem]"
+              />
+            </motion.div>
+          </motion.h5>
         </div>
         <HeroParallax products={products} />
       </div>

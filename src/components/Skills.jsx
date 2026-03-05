@@ -1,6 +1,6 @@
 // import content
 import { content } from "../Content";
-// import modal package
+import { motion } from "motion/react";
 
 const Skills = () => {
   const { skills } = content;
@@ -9,20 +9,44 @@ const Skills = () => {
     <section className="min-h-fit bg-bg_light_primary" id="skills">
       {/* content */}
       <div className="md:container px-5  py-14">
-        <h2 className="title" data-aos="fade-down">
+        <motion.h2
+          className="title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {skills.title}
-        </h2>
-        <h4 className="subtitle" data-aos="fade-down">
+        </motion.h2>
+        <motion.h4
+          className="subtitle"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           {skills.subtitle}
-        </h4>
+        </motion.h4>
         <br />
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12 } },
+            }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-10"
+          >
             {skills.skills_content.map((skill, i) => (
-              <div
+              <motion.div
                 key={i}
-                data-aos="fade-up"
-                data-aos-delay={i * 400}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: "easeOut" },
+                  },
+                }}
                 className="relative flex h-[12em] w-[18em] items-center justify-center rounded-[1.5em] border-[1px] border-dark_primary bg-bg_light_primary p-[1.5em] text-lime-300"
               >
                 <div className="group absolute -mt-10 left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]">
@@ -57,9 +81,9 @@ const Skills = () => {
                 <h1 className="text-center mt-8 font-nunito text-[2em] font-black text-purple-950">
                   {skill.name}
                 </h1>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

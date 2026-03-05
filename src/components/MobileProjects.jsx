@@ -1,7 +1,7 @@
 import { MoveRight } from "lucide-react";
 import { content } from "../Content";
 import { Button } from "../Layouts/MovingBorder";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const { Projects } = content;
 const container = {
@@ -99,15 +99,24 @@ const Portfolio = () => (
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="title" data-aos="fade-down">
+        <motion.h2
+          className="title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {Projects.title}
-        </h2>
-        <h5 className="subtitle text-xl" data-aos=" fade-down">
+        </motion.h2>
+        <motion.h5
+          className="subtitle text-xl"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           {Projects.subtitle}
-        </h5>
+        </motion.h5>
       </motion.div>
       <motion.div
         variants={container}
