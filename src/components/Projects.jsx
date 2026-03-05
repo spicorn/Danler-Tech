@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { content } from "../Content";
 import Lottie from "lottie-react";
 import animation from "../assets/lottie/heading.json";
 import { HeroParallax } from "../Layouts/HeroParallax";
+import MobileView from "../components/MobileProjects";
 
 export const products = [
   {
@@ -98,7 +100,24 @@ export const products = [
   },
 ];
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const { Projects } = content;
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  if (isMobile) {
+    return <MobileView />;
+  }
+
   return (
     <section id="portfolio">
       <div className=" px-5 pt-5 min-h-screen flex flex-col justify-between">
