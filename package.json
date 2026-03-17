@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@emailjs/browser": "^3.9.1",
     "@tabler/icons-react": "^3.36.1",
     "aos": "^2.3.4",
