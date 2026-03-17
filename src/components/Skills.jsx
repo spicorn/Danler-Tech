@@ -74,7 +74,9 @@ const Skills = () => {
                   </svg>
                   <div className="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0">
                     <div className="items-left flex flex-col justify-center">
-                      <p className="text-[0.9em] font-light text-white">{skill.para}</p>
+                      <p className="text-[0.9em] font-light text-white">
+                        {skill.para}
+                      </p>
                     </div>
                   </div>
                 </div>
