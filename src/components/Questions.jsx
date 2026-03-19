@@ -113,7 +113,6 @@ const FAQS = [
 ];
 
 const FILTERS = [
-  { id: "all", label: "All questions" },
   { id: "process", label: "Process" },
   { id: "cost", label: "Cost" },
   { id: "tech", label: "Technology" },
@@ -122,11 +121,10 @@ const FILTERS = [
 ];
 
 const Questions = () => {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("process");
   const [openId, setOpenId] = useState(null);
 
   const visibleCats = useMemo(() => {
-    if (filter === "all") return FAQS;
     return FAQS.map((c) => (c.catId === filter ? c : { ...c, items: [] })).filter(
       (c) => c.items.length,
     );

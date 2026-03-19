@@ -58,6 +58,14 @@ export const content = {
         name: "Web and Email Hosting",
         para: "Managed Web Hosting is suited to high traffic and highly secure websites. For your own peace of mind, Danler Tech will manage your VPS.",
       },
+      {
+        name: "Mobile App Development",
+        para: "We build native and cross-platform apps using Flutter and React Native. We can also build a web app and mobile app from a single shared design system to save you cost.",
+      },
+      {
+        name: "WhatsApp and Telegram Chatbot Development",
+        para: "We build WhatsApp and Telegram chatbots using Node.js and Python. We can also build a web app and mobile app from a single shared design system to save you cost.",
+      },
     ],
   },
   services: {
