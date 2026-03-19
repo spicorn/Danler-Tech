@@ -5,7 +5,10 @@ import { motion } from "motion/react";
 const FAQS = [
   {
     cat: "Process & timelines",
-    badge: { text: "Process & timelines", className: "bg-[#EEEDFE] text-[#3C3489]" },
+    badge: {
+      text: "Process & timelines",
+      className: "bg-[#EEEDFE] text-[#3C3489]",
+    },
     catId: "process",
     items: [
       {
@@ -51,7 +54,10 @@ const FAQS = [
   },
   {
     cat: "Technology & design",
-    badge: { text: "Technology & design", className: "bg-[#E1F5EE] text-[#085041]" },
+    badge: {
+      text: "Technology & design",
+      className: "bg-[#E1F5EE] text-[#085041]",
+    },
     catId: "tech",
     items: [
       {
@@ -74,7 +80,10 @@ const FAQS = [
   },
   {
     cat: "Support & after-launch",
-    badge: { text: "Support & after-launch", className: "bg-[#FAECE7] text-[#712B13]" },
+    badge: {
+      text: "Support & after-launch",
+      className: "bg-[#FAECE7] text-[#712B13]",
+    },
     catId: "support",
     items: [
       {
@@ -91,7 +100,6 @@ const FAQS = [
       },
     ],
   },
-  
 ];
 
 const FILTERS = [
@@ -106,9 +114,9 @@ const Questions = () => {
   const [openId, setOpenId] = useState(null);
 
   const visibleCats = useMemo(() => {
-    return FAQS.map((c) => (c.catId === filter ? c : { ...c, items: [] })).filter(
-      (c) => c.items.length,
-    );
+    return FAQS.map((c) =>
+      c.catId === filter ? c : { ...c, items: [] },
+    ).filter((c) => c.items.length);
   }, [filter]);
 
   const toggle = (id) => setOpenId((prev) => (prev === id ? null : id));
@@ -165,7 +173,12 @@ const Questions = () => {
             {visibleCats.map((cat) => (
               <div key={cat.catId}>
                 <div className="mb-2 px-0.5 text-[11px] font-medium uppercase tracking-[0.06em] text-slate-500">
-                  <span className={["inline-block rounded px-2 py-0.5 text-[11px] font-medium", cat.badge.className].join(" ")}>
+                  <span
+                    className={[
+                      "inline-block rounded px-2 py-0.5 text-[11px] font-medium",
+                      cat.badge.className,
+                    ].join(" ")}
+                  >
                     {cat.badge.text}
                   </span>
                 </div>
