@@ -91,25 +91,7 @@ const FAQS = [
       },
     ],
   },
-  {
-    cat: "Zimbabwe & SADC-specific",
-    badge: { text: "Zimbabwe & SADC-specific", className: "bg-[#E6F1FB] text-[#0C447C]" },
-    catId: "local",
-    items: [
-      {
-        q: "Do you work with businesses outside Zimbabwe?",
-        a: "Yes. While we're based in Zimbabwe, we work with clients across the SADC region including South Africa, Zambia, Botswana, and Mozambique. Remote collaboration is seamless — we use video calls, shared project boards, and WhatsApp to keep things smooth.",
-      },
-      {
-        q: "How do you handle load shedding during a project?",
-        a: "Our team is equipped with backup power and mobile data to ensure project continuity. We also design websites to be fast and resilient on low-bandwidth connections — important for users across Zimbabwe and the region.",
-      },
-      {
-        q: "Can you help with Google Business and local SEO?",
-        a: "Yes. We set up and optimise your Google Business Profile, submit your site to local directories, and implement on-page SEO so your business appears when people search for your services in Harare, Bulawayo, or anywhere in Zimbabwe.",
-      },
-    ],
-  },
+  
 ];
 
 const FILTERS = [
@@ -117,7 +99,6 @@ const FILTERS = [
   { id: "cost", label: "Cost" },
   { id: "tech", label: "Technology" },
   { id: "support", label: "Support" },
-  { id: "local", label: "Zimbabwe-specific" },
 ];
 
 const Questions = () => {

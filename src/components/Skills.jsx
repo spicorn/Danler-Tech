@@ -13,10 +13,6 @@ const Skills = () => {
     const extras = {
       app: [
         {
-          name: "Mobile app development",
-          para: "Cross-platform iOS & Android apps in Flutter or React Native.",
-        },
-        {
           name: "UI/UX",
           para: "Wireframes, user flows, and high-fidelity Figma prototypes.",
         },
@@ -136,11 +132,11 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {list.map((s) => (
             <div
               key={s.name}
-              className="rounded-xl border border-slate-200 bg-bg_light_primary p-5"
+              className="rounded-xl border border-slate-200 bg-bg_light_primary p-4 sm:p-5"
             >
               <div className="flex items-start justify-between gap-3">
                 <h4 className="text-base font-semibold text-dark_primary">
@@ -180,7 +176,7 @@ const Skills = () => {
   return (
     <section className="min-h-fit bg-bg_light_primary" id="skills">
       {/* content */}
-      <div className="md:container px-5  py-14">
+     <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <motion.h2
           className="title"
           initial={{ opacity: 0, y: -20 }}
@@ -200,12 +196,12 @@ const Skills = () => {
         <br />
         <div className="mx-auto max-w-[980px]">
           <Tabs
-            tabs={categorized}
-            containerClassName="justify-center"
-            tabClassName="border border-slate-200 text-sm"
-            activeTabClassName="bg-slate-900"
-            contentClassName="mt-10"
-          />
+  tabs={categorized}
+  containerClassName="flex overflow-x-auto gap-2 sm:justify-center no-scrollbar"
+  tabClassName="whitespace-nowrap border border-slate-200 text-xs sm:text-sm px-3 py-2"
+  activeTabClassName="bg-slate-900 text-white"
+  contentClassName="mt-6 sm:mt-10"
+/>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { Fragment, createElement, useMemo, useRef, useState } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
-import { Check } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { Button } from "../Layouts/MovingBorder";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "motion/react";
@@ -68,11 +68,11 @@ const Contact = () => {
   );
   const budgetOptions = useMemo(
     () => [
-      { amt: "Under $300", desc: "Basic presence" },
-      { amt: "$300 – $700", desc: "Standard site" },
-      { amt: "$700 – $1,500", desc: "Feature-rich" },
-      { amt: "$1,500 – $5,000", desc: "Custom build" },
-      { amt: "$5,000+", desc: "Enterprise / app" },
+      { amt: "Under $250", desc: "Basic presence" },
+      { amt: "$300 – $450", desc: "Standard site" },
+      { amt: "$500 – $700", desc: "Feature-rich" },
+      { amt: "$700 – $900", desc: "Custom build" },
+      { amt: "$1,000+", desc: "Enterprise / app" },
       { amt: "Not sure yet", desc: "Help me decide" },
     ],
     [],
@@ -394,26 +394,32 @@ const Contact = () => {
                           />
                         </div>
                         <div className="mb-5">
-                          <div className="mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-white">
-                            Industry / sector
-                          </div>
-                          <select
-                            id="f-industry"
-                            value={data.industry}
-                            onChange={(e) =>
-                              selectSingle("industry", e.target.value)
-                            }
-                            required
-                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
-                          >
-                            <option value="">Select your industry…</option>
-                            {industryOptions.map((o) => (
-                              <option key={o} value={o}>
-                                {o}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
+  <div className="mb-1.5 flex items-center gap-1.5 text-[13px] font-medium text-white">
+    Industry / sector
+  </div>
+
+  <div className="relative">
+    <select
+      id="f-industry"
+      value={data.industry}
+      onChange={(e) => selectSingle("industry", e.target.value)}
+      required
+      className="w-full appearance-none rounded-[10px] border border-slate-400/60 bg-dark_primary px-3 py-2.5 pr-10 text-[13px] text-white outline-none focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
+    >
+      <option value="">Select your industry…</option>
+      {industryOptions.map((o) => (
+        <option key={o} value={o}>
+          {o}
+        </option>
+      ))}
+    </select>
+
+    {/* Custom Arrow */}
+    <ChevronDown
+      className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-300"
+    />
+  </div>
+</div>
                       </>
                     ) : null}
 
@@ -745,6 +751,7 @@ const Contact = () => {
                   <div className="mt-6 flex items-center justify-between">
                     {current > 1 ? (
                       <Button
+                      type="button"
                         className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                         onClick={() => go(-1)}
                       >
@@ -758,6 +765,7 @@ const Contact = () => {
                     </span> */}
                     {current < total ? (
                       <Button
+                      type="button"
                         className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                         onClick={() => {
                           if (!isStepValid) {
@@ -778,7 +786,7 @@ const Contact = () => {
                         type="submit"
                         disabled={!isStepValid}
                       >
-                        Submit project brief ↗
+                        Submit project brief 
                       </Button>
                     )}
                   </div>
@@ -827,8 +835,8 @@ const Contact = () => {
                       <strong>{data.contact || "WhatsApp"}</strong> within 24
                       hours with a custom quote and next steps.
                     </div>
-                    <button
-                      className="mt-6 rounded-[10px] bg-[#534AB7] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#3C3489]"
+                    <Button
+                      className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                       type="button"
                       onClick={() => {
                         setSubmitted(false);
@@ -852,8 +860,8 @@ const Contact = () => {
                         });
                       }}
                     >
-                      Submit another brief ↗
-                    </button>
+                      Submit another brief 
+                    </Button>
                   </div>
                 </div>
               )}

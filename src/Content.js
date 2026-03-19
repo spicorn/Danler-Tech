@@ -42,11 +42,6 @@ export const content = {
     subtitle: "Creative Technology Company",
     skills_content: [
       {
-        name: "Website Design",
-        para: " We offer a range of services related to websites, such as designing, developing and maintaining them. Whether you require a fresh website for your business.",
-      },
-
-      {
         name: "Digital Marketing",
         para: "In today's digital era, the significance of digital marketing for business growth cannot be overstated. Danler Tech got you covered.",
       },
