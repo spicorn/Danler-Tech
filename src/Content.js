@@ -164,7 +164,7 @@ export const content = {
       {
         text: "078 782 8366/ 077 703 3766",
         icon: BsWhatsapp,
-        link: "https://wa.me/+263787828366",
+        link: "https://wa.me/message/524FK2BJ45V6L1",
       },
 
       {
