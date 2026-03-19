@@ -237,9 +237,9 @@ const Contact = () => {
   return (
     <section className="bg-dark_primary text-white" id="contact">
       <Toaster />
-      <div className="md:container px-5 py-14">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <motion.h2
-          className="title !text-white"
+          className="title !text-white text-2xl sm:text-3xl md:text-4xl"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -247,7 +247,7 @@ const Contact = () => {
           {Contact.title}
         </motion.h2>
         <motion.h4
-          className="subtitle"
+         className="subtitle text-sm sm:text-base md:text-lg"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
@@ -255,7 +255,7 @@ const Contact = () => {
           {Contact.subtitle}
         </motion.h4>
         <br />
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col gap-8 md:gap-10 md:flex-row md:items-start md:justify-between">
           <motion.form
             ref={form}
             onSubmit={sendEmail}
@@ -269,10 +269,10 @@ const Contact = () => {
             <input type="email" name="user_email" defaultValue="" hidden />
             <textarea name="message" defaultValue="" hidden />
 
-            <div className="w-full max-w-[620px] pt-2 pb-8 md:mx-0">
+            <div className="w-full max-w-[620px] mx-auto md:mx-0 pt-2 pb-8">
               {!submitted ? (
                 <>
-                  <div className="mb-8 flex items-center" id="step-bar">
+                  <div className="mb-6 flex items-center justify-between gap-2 overflow-x-auto" id="step-bar">
                     {[1, 2, 3, 4].map((i) => (
                       <Fragment key={`step-${i}`}>
                         <div
@@ -419,7 +419,7 @@ const Contact = () => {
       className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-300"
     />
   </div>
-</div>
+                        </div>
                       </>
                     ) : null}
 
@@ -748,7 +748,7 @@ const Contact = () => {
                     ) : null}
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between">
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
                     {current > 1 ? (
                       <Button
                       type="button"
@@ -888,7 +888,7 @@ const Contact = () => {
                     transition: { duration: 0.45, ease: "easeOut" },
                   },
                 }}
-                className="flex items-center gap-2 md:justify-start justify-center"
+                className="flex items-center gap-2 md:justify-start justify-start"
               >
                 <h4 className="text-white">{createElement(content.icon)}</h4>
                 <a

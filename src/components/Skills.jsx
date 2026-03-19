@@ -196,12 +196,12 @@ const Skills = () => {
         <br />
         <div className="mx-auto max-w-[980px]">
           <Tabs
-  tabs={categorized}
-  containerClassName="flex overflow-x-auto gap-2 sm:justify-center no-scrollbar"
-  tabClassName="whitespace-nowrap border border-slate-200 text-xs sm:text-sm px-3 py-2"
-  activeTabClassName="bg-slate-900 text-white"
-  contentClassName="mt-6 sm:mt-10"
-/>
+            tabs={categorized}
+            containerClassName="flex overflow-x-auto gap-2 sm:justify-center no-scrollbar"
+            tabClassName="whitespace-nowrap border border-slate-200 text-xs sm:text-sm px-3 py-2"
+            activeTabClassName="bg-slate-900 text-white"
+            contentClassName="mt-6 sm:mt-10"
+          />
         </div>
       </div>
     </section>
