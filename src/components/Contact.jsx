@@ -2,6 +2,7 @@ import { Fragment, createElement, useMemo, useRef, useState } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import { Check } from "lucide-react";
+import { Button } from "../Layouts/MovingBorder";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "motion/react";
 
@@ -280,8 +281,8 @@ const Contact = () => {
                             i < current
                               ? "border-[#1D9E75] bg-[#1D9E75] text-white"
                               : i === current
-                                ? "border-[#534AB7] bg-[#534AB7] text-white"
-                                : "border-slate-400/60 bg-slate-950/15 text-slate-200/85",
+                                ? "border-slate-400/60 bg-transparent text-white"
+                                : "border-slate-400/60 bg-slate-950/15= text-slate-200/85",
                           ].join(" ")}
                           id={`dot-${i}`}
                         >
@@ -317,7 +318,7 @@ const Contact = () => {
                     })}
                   </div>
 
-                  <div id="step-content">
+                  <div id="1-content">
                     {current === 1 ? (
                       <>
                         <div className="mb-5">
@@ -336,7 +337,7 @@ const Contact = () => {
                               selectSingle("name", e.target.value)
                             }
                             required
-                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           />
                         </div>
                         <div className="grid grid-cols-1 gap-3 min-[560px]:grid-cols-2">
@@ -353,7 +354,7 @@ const Contact = () => {
                                 selectSingle("phone", e.target.value)
                               }
                               required
-                              className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                              className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                             />
                           </div>
                           <div className="mb-5">
@@ -370,7 +371,7 @@ const Contact = () => {
                               }
                               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                               required
-                              className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                              className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                             />
                           </div>
                         </div>
@@ -389,7 +390,7 @@ const Contact = () => {
                             onChange={(e) =>
                               selectSingle("biz", e.target.value)
                             }
-                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           />
                         </div>
                         <div className="mb-5">
@@ -403,7 +404,7 @@ const Contact = () => {
                               selectSingle("industry", e.target.value)
                             }
                             required
-                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           >
                             <option value="">Select your industry…</option>
                             {industryOptions.map((o) => (
@@ -509,7 +510,7 @@ const Contact = () => {
                               data.existingSite &&
                               data.existingSite.startsWith("Yes — share")
                             }
-                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="w-full rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           />
                         </div>
                         <div className="mb-5">
@@ -526,7 +527,7 @@ const Contact = () => {
                               selectSingle("description", e.target.value)
                             }
                             required
-                            className="min-h-20 w-full resize-y rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] leading-6 text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="min-h-20 w-full resize-y rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] leading-6 text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           />
                         </div>
                       </>
@@ -734,7 +735,7 @@ const Contact = () => {
                               selectSingle("extra", e.target.value)
                             }
                             style={{ minHeight: 64 }}
-                            className="w-full resize-y rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] leading-6 text-white outline-none placeholder:text-slate-200/45 focus:border-[#7F77DD] focus:ring-2 focus:ring-[#7F77DD]/20"
+                            className="w-full resize-y rounded-[10px] border border-slate-400/60 bg-slate-950/15 px-3 py-2.5 text-[13px] leading-6 text-white outline-none placeholder:text-slate-200/45 focus:border-slate-900/[0.8] focus:ring-2 focus:ring-[#7F77DD]/20"
                           />
                         </div>
                       </>
@@ -743,23 +744,21 @@ const Contact = () => {
 
                   <div className="mt-6 flex items-center justify-between">
                     {current > 1 ? (
-                      <button
-                        className="rounded-[10px] border border-slate-400/60 px-4 py-2.5 text-[13px] text-slate-200/85 hover:bg-slate-200/10"
-                        type="button"
+                      <Button
+                        className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                         onClick={() => go(-1)}
                       >
-                        ← Back
-                      </button>
+                        Back
+                      </Button>
                     ) : (
                       <span />
                     )}
-                    <span className="text-[12px] text-slate-200/65">
+                    {/* <span className="text-[12px] text-slate-200/65">
                       Step {current} of {total}
-                    </span>
+                    </span> */}
                     {current < total ? (
-                      <button
-                        className="rounded-[10px] bg-[#534AB7] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#3C3489] disabled:cursor-default disabled:bg-slate-400/60"
-                        type="button"
+                      <Button
+                        className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                         onClick={() => {
                           if (!isStepValid) {
                             toast.error(
@@ -771,16 +770,16 @@ const Contact = () => {
                         }}
                         disabled={!isStepValid}
                       >
-                        Continue →
-                      </button>
+                        Continue
+                      </Button>
                     ) : (
-                      <button
-                        className="rounded-[10px] bg-[#534AB7] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#3C3489] disabled:cursor-default disabled:bg-slate-400/60"
+                      <Button
+                        className="bg-white dark:bg-transparent text-white border-neutral-200 flex items-center gap-2"
                         type="submit"
                         disabled={!isStepValid}
                       >
                         Submit project brief ↗
-                      </button>
+                      </Button>
                     )}
                   </div>
                 </>
