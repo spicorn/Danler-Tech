@@ -1,14 +1,182 @@
 // import content
 import { content } from "../Content";
 import { motion } from "motion/react";
+import { Tabs } from "../Layouts/Tabs";
+import { useMemo } from "react";
 
 const Skills = () => {
   const { skills } = content;
 
+  const categorized = useMemo(() => {
+    const items = skills.skills_content || [];
+
+    const extras = {
+      app: [
+        {
+          name: "UI/UX",
+          para: "Wireframes, user flows, and high-fidelity Figma prototypes.",
+        },
+        {
+          name: "App maintenance & updates",
+          para: "Monthly updates, OS compatibility patches, crash monitoring, and performance optimisation.",
+        },
+      ],
+      web: [
+        {
+          name: "Business website design",
+          para: "Professional 5–10 page websites built mobile-first approach.",
+        },
+        {
+          name: "E-commerce store",
+          para: "Online stores with EcoCash, Paynow & Innbucks integration.",
+        },
+        {
+          name: "Landing page design",
+          para: "High-converting campaign pages, product launches, and lead capture pages with professional visuals.",
+        },
+        {
+          name: "Web application development",
+          para: "Custom web apps  booking systems, portals, dashboards, school management systems.",
+        },
+        {
+          name: "Website maintenance",
+          para: "Monthly updates, security patches, backups, uptime monitoring, and content changes.",
+        },
+      ],
+      marketing: [
+        {
+          name: "Social media management",
+          para: "Full management of Facebook, Instagram, LinkedIn, TikTok.",
+        },
+        {
+          name: "Facebook & Instagram Ads",
+          para: "Paid social with Danler Tech, produced video and photo creatives  significantly outperforms stock content.",
+        },
+        {
+          name: "Google Ads management",
+          para: "Search, Display, and YouTube campaigns managed with  ad creatives.",
+        },
+        {
+          name: "Analytics & monthly reporting",
+          para: "Monthly performance report with KPIs across web, social, ads, and SEO. Delivered with clear action points.",
+        },
+      ],
+    };
+
+    const matchers = [
+      {
+        key: "web",
+        title: "Web Design",
+        test: (n) => /website|web\b|hosting|domain|email hosting/i.test(n),
+      },
+      {
+        key: "app",
+        title: "App Design",
+        test: (n) => /app|mobile|flutter|react native/i.test(n),
+      },
+      {
+        key: "marketing",
+        title: "Digital Marketing",
+        test: (n) => /marketing|seo/i.test(n),
+      },
+      {
+        key: "automation",
+        title: "Automation",
+        test: (n) => /chatbot|whatsapp|telegram|bot/i.test(n),
+      },
+      {
+        key: "other",
+        title: "Other",
+        test: () => true,
+      },
+    ];
+
+    const buckets = new Map(matchers.map((m) => [m.key, []]));
+
+    items.forEach((s) => {
+      const name = s?.name || "";
+      const m = matchers.find((x) => x.key !== "other" && x.test(name));
+      const key = m?.key || "other";
+      buckets.get(key).push(s);
+    });
+
+    // Add curated items (avoid duplicates by name)
+    for (const [key, list] of Object.entries(extras)) {
+      const existingNames = new Set((buckets.get(key) || []).map((s) => s?.name));
+      list.forEach((s) => {
+        if (!existingNames.has(s.name)) buckets.get(key).push(s);
+      });
+    }
+
+    // Remove duplicates from overlapping matchers (keep first match in priority order)
+    const seen = new Set();
+    for (const k of ["web", "app", "marketing", "automation", "other"]) {
+      const list = buckets.get(k) || [];
+      buckets.set(
+        k,
+        list.filter((s) => {
+          const id = s?.name || JSON.stringify(s);
+          if (seen.has(id)) return false;
+          seen.add(id);
+          return true;
+        }),
+      );
+    }
+
+    const makeTabContent = (title, list) => (
+      <div className="rounded-2xl bordershadow-sm md:p-8">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xl font-bold text-dark_primary">{title}</h3>
+          <p className="text-sm leading-6 text-slate-600">
+            Explore what we offer in {title.toLowerCase()}.
+          </p>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {list.map((s) => (
+            <div
+              key={s.name}
+              className="rounded-xl border border-slate-200 bg-bg_light_primary p-4 sm:p-5"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-base font-semibold text-dark_primary">
+                  {s.name}
+                </h4>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-slate-700">{s.para}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+
+    const tabs = [
+      { value: "web", title: "Web Design", list: buckets.get("web") || [] },
+      { value: "app", title: "App Design", list: buckets.get("app") || [] },
+      {
+        value: "marketing",
+        title: "Digital Marketing",
+        list: buckets.get("marketing") || [],
+      },
+      {
+        value: "automation",
+        title: "Automation",
+        list: buckets.get("automation") || [],
+      },
+      { value: "other", title: "Other", list: buckets.get("other") || [] },
+    ].filter((t) => t.list.length);
+
+    return tabs.map((t) => ({
+      value: t.value,
+      title: t.title,
+      content: makeTabContent(t.title, t.list),
+    }));
+  }, [skills.skills_content]);
+
   return (
     <section className="min-h-fit bg-bg_light_primary" id="skills">
       {/* content */}
-      <div className="md:container px-5  py-14">
+     <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <motion.h2
           className="title"
           initial={{ opacity: 0, y: -20 }}
@@ -26,64 +194,14 @@ const Skills = () => {
           {skills.subtitle}
         </motion.h4>
         <br />
-        <div className="flex justify-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.12 } },
-            }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-10"
-          >
-            {skills.skills_content.map((skill, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.5, ease: "easeOut" },
-                  },
-                }}
-                className="relative flex h-[12em] w-[18em] items-center justify-center rounded-[1.5em] border-[1px] border-dark_primary bg-bg_light_primary p-[1.5em] text-lime-300"
-              >
-                <div className="group absolute -mt-10 left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-slate-900/80 backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]">
-                  <svg
-                    className="h-[1.5em] w-[1.5em]  duration-300 group-hover:opacity-0"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    height="48"
-                    width="48"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#a)">
-                      <path
-                        clipRule="evenodd"
-                        d="M21.6 36h4.8V21.6h-4.8V36ZM24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0Zm0 43.2C13.44 43.2 4.8 34.56 4.8 24 4.8 13.44 13.44 4.8 24 4.8c10.56 0 19.2 8.64 19.2 19.2 0 10.56-8.64 19.2-19.2 19.2Zm-2.4-26.4h4.8V12h-4.8v4.8Z"
-                        fillRule="evenodd"
-                        fill="#fff"
-                      ></path>
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path d="M0 0h48v48H0z" fill="#fff"></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <div className="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0">
-                    <div className="items-left flex flex-col justify-center">
-                      <p className="text-[0.9em] font-light text-white">{skill.para}</p>
-                    </div>
-                  </div>
-                </div>
-                <h1 className="text-center mt-8 font-nunito text-[2em] font-black text-dark_primary">
-                  {skill.name}
-                </h1>
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="mx-auto max-w-[980px]">
+          <Tabs
+            tabs={categorized}
+            containerClassName="flex overflow-x-auto gap-2 sm:justify-center no-scrollbar"
+            tabClassName="whitespace-nowrap border border-slate-200 text-xs sm:text-sm px-3 py-2"
+            activeTabClassName="bg-slate-900 text-white"
+            contentClassName="mt-6 sm:mt-10"
+          />
         </div>
       </div>
     </section>

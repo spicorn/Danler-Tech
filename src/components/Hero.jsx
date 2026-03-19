@@ -4,15 +4,24 @@ import BackgroundAnimation from "../Layouts/background";
 import { TypeAnimation } from "react-type-animation";
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/responsive.json";
+import { getCalApi } from "@calcom/embed-react";
 import { Button } from "../Layouts/MovingBorder";
 import { Rocket } from "lucide-react";
 import { MessageCircleMore } from "lucide-react";
-import { SmilePlus } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { ThreeDMarquee } from "../Layouts/Marquee";
 import { motion } from "motion/react";
+import { useEffect } from "react";
 
 const Hero = () => {
   const { hero } = content;
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   const images = [
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884p",
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
@@ -91,11 +100,14 @@ const Hero = () => {
           <br />
           <div className="flex justify-end">
             <Button
+              data-cal-namespace="15min"
+              data-cal-link="danlertech/15min"
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
               borderRadius="1.75rem"
               className="bg-white dark:bg-transparent text-black dark:text-black border-neutral-200 flex items-center gap-2"
             >
+              <CalendarDays size={18} />
               {hero.btnText}
-              <SmilePlus size={18} />
             </Button>
           </div>
           <motion.div

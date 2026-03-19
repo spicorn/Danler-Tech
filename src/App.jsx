@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
 import Hireme from "./components/Hireme";
 import Contact from "./components/Contact";
+import Questions from "./components/Questions";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Testimonials />
       <Hireme />
       <Contact />
+      <Questions />
       <footer className="p-3 text-center">
         <h6 className="mb-3">Danler Tech</h6>
         <p>Danler Tech © All CopyRights Reserved 2026</p>
