@@ -93,7 +93,7 @@ const projects = [
 ];
 
 const Portfolio = () => (
-  <section id="projects" className="py-10 relative overflow-hidden">
+  <section id="portfolio" className="py-10 relative overflow-hidden">
     <div className="container mx-auto px-4 z-10">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
