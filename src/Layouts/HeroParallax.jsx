@@ -104,26 +104,37 @@ export const ProductCard = ({ product, translate }) => {
         x: translate,
       }}
       whileHover={{
-        y: -20,
+        y: -12,
       }}
-      className="group/product h-96 w-[30rem] relative shrink-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+      className="group/product relative h-96 w-[30rem] shrink-0 overflow-hidden rounded-3xl shadow-lg transition-shadow duration-300 hover:shadow-2xl motion-reduce:transform-none"
     >
       <a
         href={product.link}
-        className="block rounded-3xl overflow-hidden group-hover/product:shadow-2xl transition-shadow duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 z-10 rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark_primary"
+        aria-label={`Open ${product.title} project`}
       >
-        <img
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-3xl"
-          alt={product.title}
-        />
+        <span className="sr-only">{product.title}</span>
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+      <img
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="pointer-events-none absolute inset-0 h-full w-full rounded-3xl object-cover object-left-top"
+        alt=""
+        aria-hidden="true"
+      />
+      {/* Bottom scrim: readable titles without a full-frame black veil */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/85 via-black/40 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] px-5 pb-5 pt-12">
+        <h2 className="max-w-[18rem] font-Poppins text-lg font-semibold leading-[1.25] tracking-tight text-white md:text-xl">
+          {product.title}
+        </h2>
+      </div>
     </motion.div>
   );
 };

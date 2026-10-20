@@ -8,6 +8,7 @@ import project1 from "./assets/images/Projects/img1.png";
 import project2 from "./assets/images/Projects/img2.png";
 import tob from "./assets/images/Projects/tob.png";
 import mineral from "./assets/images/Projects/mineral.png";
+import machanzi from "./assets/images/Projects/machanzi.png";
 
 import avatar1 from "./assets/images/Testimonials/avatar1.png";
 import avatar2 from "./assets/images/Testimonials/avatar2.png";
@@ -94,6 +95,13 @@ export const content = {
         image: project1,
         link: "https://associated-foods-zimbabwe.vercel.app",
       },
+
+      {
+        title: "Maruwa Machanzi Attorneys",
+        image: machanzi,
+        link: "https://maruwamachanzi.co.zw/",
+      },
+
       {
         title: "Vakani",
         image: project2,

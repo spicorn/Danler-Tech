@@ -39,10 +39,10 @@ export const products = [
   },
 
   {
-    title: "Instant Homes",
-    link: "https://spicorn.github.io/instanthomes/",
+    title: "Maruwa Machanzi Attorneys",
+    link: "https://maruwamachanzi.co.zw/",
     thumbnail:
-      "https://ik.imagekit.io/wuvzopkfi/homes.png?updatedAt=1751534434332",
+      "https://ik.imagekit.io/qvdv4r3lk/machanzi.png",
   },
 
   {
@@ -58,10 +58,10 @@ export const products = [
       "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
   },
   {
-    title: "Instant Homes",
-    link: "https://spicorn.github.io/instanthomes/",
+    title: "Maruwa Machanzi Attorneys",
+    link: "https://maruwamachanzi.co.zw/",
     thumbnail:
-      "https://ik.imagekit.io/wuvzopkfi/homes.png?updatedAt=1751534434332",
+      "https://ik.imagekit.io/qvdv4r3lk/machanzi.png",
   },
   {
     title: "First Mutual",
@@ -76,10 +76,10 @@ export const products = [
   },
 
   {
-    title: "Associated Foods Zimabwe",
-    link: "https://spicorn.github.io/Associated-Foods-ZImbabwe/",
+    title: "Maruwa Machanzi Attorneys",
+    link: "https://maruwamachanzi.co.zw/",
     thumbnail:
-      "https://ik.imagekit.io/qvdv4r3lk/afz.png?updatedAt=1715932037352",
+      "https://ik.imagekit.io/qvdv4r3lk/machanzi.png",
   },
   {
     title: "Tob Energy",

@@ -1,12 +1,12 @@
 {
-  "homepage": "https://spicorn.github.io/spicorn/Danler-Tech",
+  "homepage": "https://spicorn.github.io/Danler-Tech",
   "name": "react_portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --nojekyll",
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"

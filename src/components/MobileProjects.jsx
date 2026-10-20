@@ -38,11 +38,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "Instant Homes",
+    title: "Maruwa Machanzi Attorneys",
     description:
-      "Instant Homes is Zimbabwe's leading provider of high-quality, customizable, and sustainable prefab homes. Our homes are adapted from Australian designs to suit Zimbabwean needs, ensuring comfort, efficiency, and affordability for all.",
-    image: "https://ik.imagekit.io/qvdv4r3lk/instant.png",
-    liveUrl: "https://spicorn.github.io/instanthomes",
+      "Maruwa Machanzi Attorneys is a law firm that provides legal services to clients in Zimbabwe.",
+    image: "https://ik.imagekit.io/qvdv4r3lk/machanzi.png",
+    liveUrl: "https://maruwamachanzi.co.zw/",
     featured: false,
   },
   {
